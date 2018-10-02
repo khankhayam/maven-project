@@ -20,10 +20,18 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
         <jms:inbound-endpoint queue="flights" connector-ref="Active_MQ" doc:name="JMS"/>
         <logger message="#[message.payload]" level="INFO" doc:name="Logger"/>
     </flow>
+    
+    
+    
+    
     <flow name="mavenFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/hello" doc:name="HTTP"/>
         <set-payload value="#[&quot;Hello Maven&quot;]" doc:name="Set Payload"/>
     </flow>
+    
+    
+    
+    
     <flow name="retrieveFlights">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/flights" doc:name="HTTP"/>
         <db:select config-ref="Derby_Configuration" doc:name="Database">
