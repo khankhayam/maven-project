@@ -15,11 +15,13 @@ public class HelloMavenTest extends FunctionalTestCase {
 		assertEquals("application/json", contentType);
 	}
 
+	
 	@Test
 	public void mavenFlowReturnsHelloMaven() throws Exception {
 		runFlowAndExpect("mavenFlow", "Hello Maven");
 	}
 
+	
 	@Override
 	protected String getConfigFile() {
 		return "mavan-project.xml";
